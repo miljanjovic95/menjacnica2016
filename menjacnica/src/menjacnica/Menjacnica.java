@@ -16,8 +16,8 @@ import menjacnica.sistemskeoperacije.SOObrisiValutu;
 import menjacnica.sistemskeoperacije.SOSacuvajUFajl;
 import menjacnica.sistemskeoperacije.SOUcitajIzFajla;
 
-public class Menjacnica implements MenjacnicaInterface {
-
+public class Menjacnica implements MenjacnicaInterface{
+	
 	private LinkedList<Valuta> kursnaLista = new LinkedList<Valuta>();
 
 	@Override
@@ -42,7 +42,7 @@ public class Menjacnica implements MenjacnicaInterface {
 
 	@Override
 	public void ucitajIzFajla(String putanja) {
-		SOUcitajIzFajla.izvrsi(putanja, kursnaLista);
+		kursnaLista = SOUcitajIzFajla.izvrsi(putanja, kursnaLista);
 	}
 
 	@Override
@@ -50,4 +50,5 @@ public class Menjacnica implements MenjacnicaInterface {
 		SOSacuvajUFajl.izvrsi(putanja, kursnaLista);
 	}
 
+	
 }
